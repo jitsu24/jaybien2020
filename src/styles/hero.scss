@@ -1,0 +1,21 @@
+@import './constants.style.scss';
+
+.hero{
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: $padding-l;
+    color: $color-white;
+
+}
+
+.hero__logo{
+    max-width: 800px;
+    flex: 1;
+    width: 100%;
+    margin-bottom: $margin-m;
+}

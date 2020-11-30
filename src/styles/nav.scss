@@ -1,0 +1,36 @@
+@import './constants.style.scss';
+
+.nav {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: $page-margins;
+    padding-left: $page-margins;
+    padding-top: $padding-sm;
+
+}
+
+.nav__menu-trigger{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__menu-span{
+    display: block;
+    width: 70px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: black;
+}
+.nav__menu-span:nth-child(odd){
+    width: 50px;
+}
+
+* {
+    outline: 1px solid red;
+}
