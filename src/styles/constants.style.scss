@@ -1,9 +1,31 @@
+@import "./typography.scss";
+
 // Colors
 $color-primary: #001824;
 $color-highlight: #73021b;
 $color-white: #FFFFFF;
 // END OF COLORS
 
+// BREAKPOINTS
+$bp-xs: 480px;
+$bp-sm: 768px;
+$bp-m: 1024px;
+$bp-l: 1280px;
+// END OF BREAKPOINTS
+
+
+// TYPOGRAPHY
+$font-body: "Poppins";
+$font-flair: "Playfair";
+$font-title-size: 3.224rem;
+$font-subtitle-size: 1.612rem;
+
+@media all and (max-width: $bp-xs){
+    $font-title-size: 2.5rem;
+    $font-subtitle-size: 1.551rem;
+}
+
+// END OF TYPOGRAPHY
 
 
 // SPACING
@@ -16,3 +38,10 @@ $padding-sm: .7rem;
 $padding-m: 1.5rem;
 $padding-l: 3rem;
 // END OF SPACING
+
+
+
+
+
+// 
+$border-r-m: 1.9rem ;

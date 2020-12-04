@@ -1,5 +1,11 @@
+import Blob from './blob';
 import Logo from './logo';
+import TS from './ts';
+
+
 
 export {
-    Logo
+    Blob,
+    Logo,
+    TS
 }
