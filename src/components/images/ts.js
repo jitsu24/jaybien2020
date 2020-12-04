@@ -20,6 +20,7 @@ const TS_Home = ({className}) => {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
