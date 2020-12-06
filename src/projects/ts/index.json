@@ -1,0 +1,9 @@
+{
+    "title": "Totalscape",
+    "subtitle":"WordPress Plugin & API Integration",
+    "slug": "tscsape",
+    "date": "2017",
+    "featuredImage": "ts_home.png",
+    "projectImages": ["ts_proto", "ts_chat", "ts_design_files", "ts_proto", "ts_sticky_notes"],
+    "body": "<p>Hello world!</p>"
+  }

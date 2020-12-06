@@ -14,6 +14,7 @@ module.exports = {
           extensions: [`.mdx`, `.md`],
       },
     },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
