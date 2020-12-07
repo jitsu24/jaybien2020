@@ -17,7 +17,7 @@ import {Logo} from './images';
 const Hero = ({ children }) => {
 
     return (
-      <div className={`section`}>
+      <div className={`section dark`} data-anchor="hero" id="hero">
           <div className={`hero`}>
            <Logo className={'hero__logo'}></Logo>
            <h1 className="title">DEV, NY</h1>

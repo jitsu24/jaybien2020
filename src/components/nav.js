@@ -5,10 +5,10 @@ import React from "react";
 import '../styles/nav.scss';
 
 
-const Nav = ({ siteTitle }) => (
-  <nav className={'nav dark'}>
+const Nav = ({ siteTitle, navTheme }) => (
+  <nav className={`nav ${navTheme}`}>
       <div className={['nav__left']}>
-          <h3>Jay Bien-aimé</h3>
+          <h3><a className={'nav__brand'} href={'#'}>Jay Bien-aimé</a></h3>
       </div>
 
       <div className={'nav__right'}>

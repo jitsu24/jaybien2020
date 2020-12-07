@@ -17,14 +17,17 @@ const Logo = ({className}) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "jb00.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+            childImageSharp {
+      fluid(maxWidth: 500, quality: 100) {
+        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluidLimitPresentationSize
+      }
+    }
       }
     }
   `)
+  
+
 
   if (!data?.placeholderImage?.childImageSharp?.fluid) {
     return <div>Picture not found</div>

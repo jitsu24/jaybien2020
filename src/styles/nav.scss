@@ -10,10 +10,29 @@
     padding-left: $page-margins;
     padding-top: $padding-sm;
 
+    &.light{
+        .nav__menu-span{
+            background-color: $color-white;
+        }
+        .nav__brand{
+            color: $color-white;
+        }
+        
+    }
+
+}
+.nav__left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__brand{
+    color: $color-primary;
 }
 
 .nav__menu-trigger{
-    height: 50px;
+    height: 36px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,7 +44,8 @@
     width: 70px;
     height: 3px;
     border-radius: 10px;
-    background-color: black;
+    background-color: $color-primary;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .nav__menu-span:nth-child(odd){
     width: 50px;

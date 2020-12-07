@@ -11,7 +11,7 @@ const Project = ({ Project, classNames }) => {
     
 
   return (
-<div className={'section'} id={`project`}>
+<div className={'section light'} id={`project`} data-anchor="project">
     <div className={`project ${classNames}`}>
         <div className={'project__display'}>
      

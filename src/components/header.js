@@ -6,10 +6,10 @@ import Nav from "./nav";
 
 import '../styles/header.scss';
 
-const Header = ({ siteTitle }) => (
-  <header className={['header dark']}
+const Header = ({ siteTitle, navTheme }) => (
+  <header className={['header']}
   >
-    <Nav></Nav>
+    <Nav navTheme={navTheme}></Nav>
     
   </header>
 )
