@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import { Link } from "gatsby"
+import { Link, graphql} from "gatsby"
 import ReactFullpage from '@fullpage/react-fullpage';
 
 import Layout from "../components/layout"
@@ -8,15 +8,37 @@ import SEO from "../components/seo"
 
 import {Hero, Project} from '../components'
 
+import {ThemeProvider, ThemeContext} from '../context/ThemeContext';
+import useThemeContext from '../hooks/useThemeContext';
+
+
 class IndexPage extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      navTheme: 'light'
+      navTheme: 'light',
+      totalSections: null,
+      currentSection: null,
     }
   }
+
+  componentDidMount(){
+    // can't get # of sections from fullpage directly for menu and location indicator...
+    // so yeah, need to create custom location indicator
+    let sections = Array.from(document.querySelectorAll('.section'));
+    this.setState({totalSections: sections.length});
+    
+    
+  
+    // let stateA = seeState()
+    // toggleTheme();
+    // let stateB = seeState()
+    // console.log({stateA}, {stateB});
+    
+  }
+
 
   onLeave(origin, destination, direction) {
     console.log('onLeave', { origin, destination, direction });
@@ -27,28 +49,25 @@ class IndexPage extends Component {
       this.setState({navTheme: 'dark'})
     }
     console.log({classList});
-    // arguments are mapped in order of fullpage.js callback arguments do something
-    // with the event
   }
 
-
-  handleChangeColors() {
-
-  }
-
+  
 
 
   render(){
     return(
-<Layout
-navTheme={this.state.navTheme}
+      <ThemeProvider>
+      <Layout
+
+      navTheme={this.state.navTheme}
 >
     <SEO title="Home" />
     <ReactFullpage
     //fullpage options
     scrollingSpeed = {1000} /* Options here */
     licenseKey={null}
-    navigation= {true}
+    navigation= {false}
+    navigationPosition= {'left'}
     onLeave={this.onLeave.bind(this)}
     render={({ state, fullpageApi }) => {
      
@@ -65,21 +84,32 @@ navTheme={this.state.navTheme}
       );
     }}
   />
-
-
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
+  </ThemeProvider>
+
     )
   }
 }
 
 
 
-export default IndexPage
+export default IndexPage;
+
+
+export const query = graphql`
+ query HomePageQuery {
+  tsJson {
+    subtitle
+    title
+    slug
+    featuredImage {
+      absolutePath
+    }
+  }
+  wbhiJson {
+    title
+    subtitle
+    slug
+    featuredImage
+  }
+  }`;

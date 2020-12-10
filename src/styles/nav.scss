@@ -51,6 +51,18 @@
     width: 50px;
 }
 
+
+// overrides for #fp-nav which come from fp itself
+#fp-nav.fp-left{
+    left: $page-margins !important;
+    
+    &  ul li a span {
+        width: 30px;
+        border-radius: 10px;
+        background: $color-white;
+    }
+}
+
 * {
-    outline: 1px solid red;
+    // outline: 1px solid red;
 }
