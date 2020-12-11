@@ -1,0 +1,53 @@
+@import './constants.style.scss';
+
+.nav-bottom {
+    position: absolute;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-right: $page-margins;
+    padding-left: $page-margins;
+    padding-top: $padding-sm;
+    color: $color-white;
+    font-family: $font-flair;
+   
+
+    &.dark{
+       color: $color-primary;
+    }
+
+}
+
+.nav-bottom__head{
+    font-family: $font-flair;
+}
+.nav-bottom__right{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+   
+}
+
+.nav-bottom__social-link{
+    padding: $padding-sm;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+    color: $color-white;
+
+    &.dark{
+        border-color: $color-primary;
+        color: $color-primary;
+     }
+}
+
+.nav-bottom__social-icon{
+    width: 1.5em;
+    height: 1.5em;
+    color: $color-white;
+    fill: $color-white;
+}

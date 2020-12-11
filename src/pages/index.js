@@ -2,12 +2,13 @@ import React, {Component} from "react"
 import { Link, graphql} from "gatsby"
 import ReactFullpage from '@fullpage/react-fullpage';
 
-import {Layout, Menu} from '../components';
+import {Layout, Menu, NavBottom} from '../components';
 import SEO from "../components/seo"
 
 import {Hero, Project} from '../components'
 
 import {ThemeProvider, ThemeContext} from '../context/ThemeContext';
+import {TOTAL_SECTIONS} from '../constants'
 
 
 class IndexPage extends Component {
@@ -43,9 +44,7 @@ class IndexPage extends Component {
 
 
     const {tsJson, fhhsJson, keiyakuJson, perfectoJson} = this.props.data;
-    console.log(this.props);
     this.setState({projects:[tsJson, keiyakuJson, fhhsJson,  perfectoJson]}, ()=>{console.log(this.state)});
-    console.log(this.state);
     // console.log({props});
 
   
@@ -71,7 +70,6 @@ class IndexPage extends Component {
     this.setState({currentSection: destination});
     console.log(this.state.currentSection);
     this.updateTheme();
-    console.log({classList});
   }
 
   toggleMenu(){
@@ -125,6 +123,7 @@ class IndexPage extends Component {
       );
     }}
   />
+  {this.state.currentSection && <NavBottom  theme={this.state.navTheme} totalSections={TOTAL_SECTIONS} sectionIndex={this.state.currentSection.index}></NavBottom>}
   </Layout>
   </ThemeProvider>
 
