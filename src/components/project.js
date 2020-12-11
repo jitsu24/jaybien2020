@@ -1,3 +1,8 @@
+/**
+ * Template component for displaying project previews on index page
+ */
+
+
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import '../styles/project.scss';
@@ -11,7 +16,6 @@ const {title, subtitle, date, excerpt, featuredImage, blobFill} = project;
   
   useEffect(()=>{
         // console.log(TS_Home);
-        console.log(project);
     }, []);
     
 

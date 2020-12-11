@@ -2,15 +2,12 @@ import React, {Component} from "react"
 import { Link, graphql} from "gatsby"
 import ReactFullpage from '@fullpage/react-fullpage';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import {ProjectImage} from '../components/images';
+import {Layout, Menu} from '../components';
 import SEO from "../components/seo"
 
 import {Hero, Project} from '../components'
 
 import {ThemeProvider, ThemeContext} from '../context/ThemeContext';
-import useThemeContext from '../hooks/useThemeContext';
 
 
 class IndexPage extends Component {
@@ -22,20 +19,37 @@ class IndexPage extends Component {
       navTheme: 'light',
       totalSections: null,
       currentSection: null,
-      projects: []
+      projects: [],
+      menuVisible: false,
     }
+
+    // attach toggle menu func to the instance of this index page
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentDidMount(){
     // can't get # of sections from fullpage directly for menu and location indicator...
     // so yeah, need to create custom location indicator
-    let sections = Array.from(document.querySelectorAll('.section'));
+    const sections = Array.from(document.querySelectorAll('.section'));
     this.setState({totalSections: sections.length});
+    // set active section on first load
+    const active = sections.find(section => {
+      console.log(Array.from(section.classList));
+    });
+    console.log({active});
+
+
+
+
+
+
     const {tsJson, fhhsJson, keiyakuJson, perfectoJson} = this.props.data;
     console.log(this.props);
     this.setState({projects:[tsJson, keiyakuJson, fhhsJson,  perfectoJson]}, ()=>{console.log(this.state)});
     console.log(this.state);
     // console.log({props});
+
+  
     
     
   
@@ -58,18 +72,31 @@ class IndexPage extends Component {
     console.log({classList});
   }
 
+  toggleMenu(currentSectionTheme){
+    console.log(this.state.menuVisible);
+    this.setState({menuVisible: !this.state.menuVisible}, ()=>{
+      // callback after state updates, update the theme color to match menu state
+      if(this.state.menuVisible) {this.setState({navTheme: 'light'})}
+      else {
+// if menu is closing / closed, update nav theme based on current section theme
+        let classList = Array.from(this.state.currentSection)
+
+      }
+    });
+  }
+
   
 
 
   render(){
-    const {projects} = this.state;
-    console.log({projects});
+    const {projects, menuVisible} = this.state;
 
     return(
       <ThemeProvider>
       <Layout
 
       navTheme={this.state.navTheme}
+      toggleMenu={this.toggleMenu}
 >
     <SEO title="Home" />
     <ReactFullpage
@@ -86,6 +113,7 @@ class IndexPage extends Component {
         <ReactFullpage.Wrapper
           
         >
+                <Menu isVisible={menuVisible} ></Menu>
                 <Hero></Hero>
 
                 {projects && projects.map(project => {
