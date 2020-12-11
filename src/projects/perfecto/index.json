@@ -1,0 +1,12 @@
+{
+    "title": "Perfecto",
+    "subtitle":"WordPress Development",
+    "slug": "perfecto",
+    "excerpt":"A custom Wordpress theme for a handy man service.",
+    "date": "2016",
+    "involvement": ["Front End Development", "Wordpress Development"],
+    "featuredImage": "Perfecto.png",
+    "projectImages": ["Perfecto1.png","Perfecto2.png","Perfecto3.png","Perfecto4.png","Perfecto5.png","Perfecto6.png"],
+    "blobFill": "#FDB813",
+    "body": "My very first project. Disagreements between the agency and the client kept this from getting completed."
+  }

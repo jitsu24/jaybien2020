@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import '../styles/project.scss';
-import {TS, Blob} from './images';
+import {Blob, ProjectImage} from './images';
 
-const Project = ({ Project, classNames }) => {
-    const {TS_Home} = TS;
-    useEffect(()=>{
-        console.log(TS_Home);
+const Project = ({ project, classNames }) => {
+
+
+const {title, subtitle, date, excerpt, featuredImage, blobFill} = project;
+
+  
+  useEffect(()=>{
+        // console.log(TS_Home);
+        console.log(project);
     }, []);
     
 
@@ -16,17 +21,16 @@ const Project = ({ Project, classNames }) => {
         <div className={'project__display'}>
      
             <div className={`project__image-container`}>
-                <Blob className={`project__blob`}></Blob>
-                <TS_Home className="project__image"></TS_Home>
+                <Blob className={`project__blob`} fill={blobFill}></Blob>
+                <ProjectImage data={featuredImage} className="project__image"></ProjectImage>
+                {/* <TS_Home className="project__image"></TS_Home> */}
             </div>
         </div>
         <div className='project__information'>
-            <h2 className='project__title'>Title</h2>
-            <h3 className={'project__subtitle'}>WordPress Theme</h3>
+            <h2 className='project__title'>{title}</h2>
+            <h3 className={'project__subtitle'}>{subtitle}</h3>
             <p className={'project__description'}> 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             Voluptas, cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolorum
-              ipsam alias beatae dolore quo amet accusantium in, repellendus minima! 
+            {excerpt}
               </p>
             <a href={``} className='project__button'>View Project</a>
         </div>

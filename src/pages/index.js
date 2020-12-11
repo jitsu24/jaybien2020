@@ -4,6 +4,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import {ProjectImage} from '../components/images';
 import SEO from "../components/seo"
 
 import {Hero, Project} from '../components'
@@ -21,6 +22,7 @@ class IndexPage extends Component {
       navTheme: 'light',
       totalSections: null,
       currentSection: null,
+      projects: []
     }
   }
 
@@ -29,6 +31,11 @@ class IndexPage extends Component {
     // so yeah, need to create custom location indicator
     let sections = Array.from(document.querySelectorAll('.section'));
     this.setState({totalSections: sections.length});
+    const {tsJson, fhhsJson, keiyakuJson, perfectoJson} = this.props.data;
+    console.log(this.props);
+    this.setState({projects:[tsJson, keiyakuJson, fhhsJson,  perfectoJson]}, ()=>{console.log(this.state)});
+    console.log(this.state);
+    // console.log({props});
     
     
   
@@ -55,6 +62,9 @@ class IndexPage extends Component {
 
 
   render(){
+    const {projects} = this.state;
+    console.log({projects});
+
     return(
       <ThemeProvider>
       <Layout
@@ -77,9 +87,12 @@ class IndexPage extends Component {
           
         >
                 <Hero></Hero>
-      <Project
 
-      ></Project>
+                {projects && projects.map(project => {
+
+                 return (<Project project={project}></Project>)
+                })}
+  
         </ReactFullpage.Wrapper>
       );
     }}
@@ -99,17 +112,95 @@ export default IndexPage;
 export const query = graphql`
  query HomePageQuery {
   tsJson {
-    subtitle
     title
+    subtitle
+    excerpt
+    date
+    blobFill
     slug
     featuredImage {
-      absolutePath
+      id
+      childImageSharp {
+        fluid(quality: 100) {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          src
+          srcSet
+        }
+      }
     }
   }
-  wbhiJson {
+  fhhsJson {
     title
     subtitle
+    excerpt
+    date
+    blobFill
     slug
-    featuredImage
+    featuredImage {
+      id
+      childImageSharp {
+        fluid(quality: 100) {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          src
+          srcSet
+        }
+      }
+    }
+  }
+  keiyakuJson {
+    title
+    subtitle
+    excerpt
+    date
+    blobFill
+    slug
+    featuredImage {
+      id
+      childImageSharp {
+        fluid(quality: 100) {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          src
+          srcSet
+        }
+      }
+    }
+  }
+  perfectoJson {
+    title
+    subtitle
+    excerpt
+    date
+    blobFill
+    slug
+    featuredImage {
+      id
+      childImageSharp {
+        fluid(pngQuality: 100) {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          src
+          srcSet
+        }
+      }
+    }
   }
   }`;

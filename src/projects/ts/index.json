@@ -1,9 +1,12 @@
 {
-    "title": "Totalscape",
+    "title": "Landscaping",
     "subtitle":"WordPress Plugin & API Integration",
-    "slug": "tscsape",
-    "date": "2017",
+    "slug": "tscsape-landscaping",
+    "excerpt":"This plugin saved a client 50+ hours of admin work each month. His assistant quit and he didn't have to rehire.",
+    "date": "2018",
+    "involvement": ["Development", "UI", "UX"],
     "featuredImage": "ts_home.png",
     "projectImages": ["ts_proto", "ts_chat", "ts_design_files", "ts_proto", "ts_sticky_notes"],
-    "body": "<p>Hello world!</p>"
+    "blobFill": "#020",
+    "body": "I was approached by a client whose business was doing well, but he was having trouble managing his customers and retaining a long-term assistant to handle the admin work. By leveraging the platforms he was already using, we found a way to automate onboarding clients as well as managing a lot of the tedious processes that would normally be done by hand. Through the Hubspot API, WordPress API, Google Drive API, SendGrid API, Firebase API, I was able to add a lot of functionality to his website while delagating the workload to these proven and trusted services, saving him 50+ hours of manual admin work each month, and allowing him to forego a replacement when his latest assistant left."
   }

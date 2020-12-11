@@ -1,0 +1,12 @@
+{
+    "title": "Keiyaku Kekkon",
+    "subtitle":"WordPress Development & UI & UX",
+    "slug": "keiyaku-kekkon",
+    "excerpt":"After this dating startup received a grant from the Japanese goverment, they needed to rehaul their platform. It was slow, bulky, and unnapealing. My job was to transform them from an ugly stepsister to the bell of the ball.",
+    "date": "2017",
+    "involvement": ["Development", "UI", "UX"],
+    "featuredImage": "keiyaku1.png",
+    "projectImages": ["keiyaku0.png", "keiyaku2.png","keiyaku3.png","keiyaku4.png","keiyaku5.png","keiyaku6.png","keiyaku7.png"],
+    "blobFill": "#FC333D",
+    "body": "This startup with the idea that relationships should be built on contracts received funding from the Japanese government and needed help redesigning their platform and offering a better experience to the users. The platform was a quagmire of plugins, over 90+. In addition to redesigning the home page, I was tasked with redesigning and optimizing some of the most important inner pages including the user profile page, the users page, and the contract page. It was tricky getting familiar with the site's ecosystem. By creating custom templates and omitting uneccesary plugins while optimizing others, site speed was increased by over 500%."
+  }
