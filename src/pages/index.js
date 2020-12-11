@@ -30,13 +30,12 @@ class IndexPage extends Component {
   componentDidMount(){
     // can't get # of sections from fullpage directly for menu and location indicator...
     // so yeah, need to create custom location indicator
-    const sections = Array.from(document.querySelectorAll('.section'));
-    this.setState({totalSections: sections.length});
+    const section = document.querySelector('.section');
+    this.setState({currentSection: {index:0, item:section}}, ()=>{console.log(this.state.currentSection)});
+
+    // this.setState({totalSections: sections.length});
     // set active section on first load
-    const active = sections.find(section => {
-      console.log(Array.from(section.classList));
-    });
-    console.log({active});
+
 
 
 
@@ -57,29 +56,30 @@ class IndexPage extends Component {
     // toggleTheme();
     // let stateB = seeState()
     // console.log({stateA}, {stateB});
-    
   }
+  updateTheme(){
+    let darkSide = Array.from(this.state.currentSection.item.classList).includes('dark');
+    darkSide ? this.setState({navTheme: 'light'}) : this.setState({navTheme: 'dark'})
+  }
+
+
 
 
   onLeave(origin, destination, direction) {
     console.log('onLeave', { origin, destination, direction });
     let classList = Array.from(destination.item.classList);
-    if(classList.includes('dark')){
-      this.setState({navTheme: 'light'})
-    } else {
-      this.setState({navTheme: 'dark'})
-    }
+    this.setState({currentSection: destination});
+    console.log(this.state.currentSection);
+    this.updateTheme();
     console.log({classList});
   }
 
-  toggleMenu(currentSectionTheme){
-    console.log(this.state.menuVisible);
+  toggleMenu(){
     this.setState({menuVisible: !this.state.menuVisible}, ()=>{
       // callback after state updates, update the theme color to match menu state
       if(this.state.menuVisible) {this.setState({navTheme: 'light'})}
       else {
-// if menu is closing / closed, update nav theme based on current section theme
-        let classList = Array.from(this.state.currentSection)
+        this.updateTheme();
 
       }
     });
