@@ -34,20 +34,41 @@
 }
 
 .nav-bottom__social-link{
-    padding: $padding-sm;
+    padding: .35rem;
     border-radius: 50%;
     border: 1px solid $color-white;
     color: $color-white;
+    margin: 0 $margin-sm;
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: all .2s cubic-bezier(0.39, 0.575, 0.565, 1);
 
     &.dark{
         border-color: $color-primary;
-        color: $color-primary;
-     }
+        .nav-bottom__social-icon{
+          
+            fill: $color-primary;
+            path{
+                fill: $color-primary;
+            }
+        }
+    }
+
+
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
 }
 
 .nav-bottom__social-icon{
-    width: 1.5em;
-    height: 1.5em;
-    color: $color-white;
+    flex: 1;
     fill: $color-white;
+    path{
+        fill: $color-white;
+    }
+    
+
+    
 }
