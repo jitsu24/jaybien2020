@@ -26,6 +26,9 @@
 .nav-bottom__head{
     font-family: $font-flair;
 }
+.nav-bottom__left{
+    pointer-events: none;
+}
 .nav-bottom__right{
     display: flex;
     flex-direction: row;

@@ -95,6 +95,7 @@ class IndexPage extends Component {
 
       navTheme={this.state.navTheme}
       toggleMenu={this.toggleMenu}
+      menuVisible={menuVisible}
 >
     <SEO title="Home" />
     <ReactFullpage

@@ -12,10 +12,10 @@ import Nav from "./nav";
 
 import '../styles/header.scss';
 
-const Header = ({ siteTitle, theme, toggleMenu}) => (
+const Header = ({ siteTitle, theme, toggleMenu, menuVisible}) => (
   <header className={['header']}
   >
-    <Nav theme={theme} toggleMenu={toggleMenu}></Nav>
+    <Nav theme={theme} toggleMenu={toggleMenu} menuVisible={menuVisible}></Nav>
     
   </header>
 )

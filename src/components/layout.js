@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "../styles/layout.scss"
 
-const Layout = ({ children, navTheme, toggleMenu }) => {
+const Layout = ({ children, navTheme, toggleMenu, menuVisible }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +25,7 @@ const Layout = ({ children, navTheme, toggleMenu }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} theme={navTheme} toggleMenu={toggleMenu}/>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} theme={navTheme} toggleMenu={toggleMenu} menuVisible={menuVisible}/>
  
         <main>{children}</main>
         <footer style={{

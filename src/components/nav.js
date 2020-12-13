@@ -16,14 +16,14 @@ import useThemeContext from '../hooks/useThemeContext';
 import '../styles/nav.scss';
 
 
-const Nav = ({ siteTitle, theme, toggleMenu, fullpageApi}) => {
+const Nav = ({ siteTitle, theme, toggleMenu, menuVisible}) => {
 
   function handleNavTrigger(e){
     const self = e.currentTarget;
     console.log(e);
     toggleMenu();
   }
-  
+  const menuActive = menuVisible ? 'active' : null;
 
   return (
   <nav className={`nav ${theme}`} >
@@ -32,7 +32,7 @@ const Nav = ({ siteTitle, theme, toggleMenu, fullpageApi}) => {
       </div>
 
       <div className={'nav__right'}>
-          <div className="nav__menu-trigger" onClick={e => handleNavTrigger(e)}>
+          <div className={`nav__menu-trigger ${menuActive}`} onClick={e => handleNavTrigger(e)}>
             <span className="nav__menu-span"></span>
             <span className="nav__menu-span"></span>
             <span className="nav__menu-span"></span>
