@@ -46,7 +46,7 @@ const NavBottom = ({sectionIndex, totalSections, theme}) => {
         {SOCIALS.map(social=>{
 
             return(
-                <div className={`nav-bottom__social-link  ${theme}`}>
+                <div className={`nav-bottom__social-link  ${theme}`} key={`${social.name}`}>
                     <a href={`${social.url}`} target="_tab">
                         {renderIcon(social.name.toLowerCase(), "nav-bottom__social-icon")}
                     </a>

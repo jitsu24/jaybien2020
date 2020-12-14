@@ -5,3 +5,10 @@
  */
 
 // You can delete this file if you're not using it
+
+// create pages programatically from json 
+const { createFilePath } = require(`gatsby-source-filesystem`)
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  console.log({node});
+}

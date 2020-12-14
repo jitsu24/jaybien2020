@@ -7,7 +7,6 @@ import '../styles/menu.scss';
 
 
 const Menu = ({isVisible})=>{
-    console.log({isVisible})
 
     return isVisible ? (<div className="menu"> 
 

@@ -44,7 +44,7 @@ class IndexPage extends Component {
 
 
     const {tsJson, fhhsJson, keiyakuJson, perfectoJson} = this.props.data;
-    this.setState({projects:[tsJson, keiyakuJson, fhhsJson,  perfectoJson]}, ()=>{console.log(this.state)});
+    this.setState({projects:[tsJson, keiyakuJson, fhhsJson,  perfectoJson]});
     // console.log({props});
 
   
@@ -65,10 +65,9 @@ class IndexPage extends Component {
 
 
   onLeave(origin, destination, direction) {
-    console.log('onLeave', { origin, destination, direction });
+    // console.log('onLeave', { origin, destination, direction });
     let classList = Array.from(destination.item.classList);
     this.setState({currentSection: destination});
-    console.log(this.state.currentSection);
     this.updateTheme();
   }
 
@@ -101,7 +100,7 @@ class IndexPage extends Component {
     <ReactFullpage
     //fullpage options
     scrollingSpeed = {1000} /* Options here */
-    licenseKey={null}
+    licenseKey={`OPEN-SOURCE-GPLV3-LICENSE`}
     navigation= {false}
     navigationPosition= {'left'}
     onLeave={this.onLeave.bind(this)}
@@ -117,7 +116,7 @@ class IndexPage extends Component {
 
                 {projects && projects.map(project => {
 
-                 return (<Project project={project}></Project>)
+                 return (<Project key={project.slug} project={project}></Project>)
                 })}
   
         </ReactFullpage.Wrapper>

@@ -20,7 +20,6 @@ const Nav = ({ siteTitle, theme, toggleMenu, menuVisible}) => {
 
   function handleNavTrigger(e){
     const self = e.currentTarget;
-    console.log(e);
     toggleMenu();
   }
   const menuActive = menuVisible ? 'active' : null;
