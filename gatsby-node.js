@@ -7,7 +7,11 @@
 // You can delete this file if you're not using it
 
 // create pages programatically from json 
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path');
+
+
+
 exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   let nodes = await node;
@@ -17,6 +21,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
 
 exports.createPages = async ({graphql, actions})=>{
+  const {createPage} = actions;
   const result = await graphql(`
   query{ tsJson {
     title
@@ -113,5 +118,22 @@ exports.createPages = async ({graphql, actions})=>{
   }
   `);
 
-  console.log(JSON.stringify(result, null, 4));
+
+  let nodes =result.data;
+
+for(let i in nodes){
+  console.log(nodes.i);
+}
+  // for(let project in result.data){
+  //   const node = result.data.project;
+  //   // console.log({node});
+  //   // createPage({
+  //   //   path: node.slug,
+  //   //   component: path.resolve(`./src/templates/project-page.js`)
+  //   // })
+  // }
+
+
+
+
 }

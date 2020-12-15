@@ -8,7 +8,16 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
-    `gatsby-transformer-json`,
+    {
+      resolve:`gatsby-transformer-json`,
+      options: {
+        typeName: ({object})=>{
+          console.log({object});
+          return object.project ? 'Project' : object.typeName
+        }
+      }
+
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
