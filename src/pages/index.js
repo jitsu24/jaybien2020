@@ -115,7 +115,6 @@ class IndexPage extends Component {
                 <Hero></Hero>
 
                 {projects && projects.map(project => {
-
                  return (<Project key={project.slug} project={project}></Project>)
                 })}
   
@@ -130,11 +129,6 @@ class IndexPage extends Component {
     )
   }
 }
-
-
-
-export default IndexPage;
-
 
 export const query = graphql`
  query HomePageQuery {
@@ -231,3 +225,7 @@ export const query = graphql`
     }
   }
   }`;
+
+
+
+export default IndexPage;

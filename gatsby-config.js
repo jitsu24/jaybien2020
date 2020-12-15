@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -19,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/src/projects/`,
       },
     },
     `gatsby-transformer-sharp`,
