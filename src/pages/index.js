@@ -41,10 +41,9 @@ class IndexPage extends Component {
 
 
 
+    console.log(this.props.data.allProjectJson.edges);
 
-
-    const {tsJson, fhhsJson, keiyakuJson, perfectoJson} = this.props.data;
-    this.setState({projects:[tsJson, keiyakuJson, fhhsJson,  perfectoJson]});
+    this.setState({projects:this.props.data.allProjectJson.edges});
     // console.log({props});
 
   
@@ -115,7 +114,7 @@ class IndexPage extends Component {
                 <Hero></Hero>
 
                 {projects && projects.map(project => {
-                 return (<Project key={project.slug} project={project}></Project>)
+                 return (<Project key={project.node.slug} project={project.node}></Project>)
                 })}
   
         </ReactFullpage.Wrapper>
@@ -130,101 +129,35 @@ class IndexPage extends Component {
   }
 }
 
-export const query = graphql`
- query HomePageQuery {
-  tsJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(quality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
+export const pageQuery = graphql`
+  {
+    allProjectJson {
+      edges {
+        node {
+          title
+          subtitle
+          excerpt
+          slug
+          date
+          blobFill
+          featuredImage {
+            id
+            childImageSharp {
+              fluid {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                originalImg
+                originalName
+              }
+            }
+          }
         }
       }
     }
   }
-  fhhsJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(quality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  keiyakuJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(quality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  perfectoJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(pngQuality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  }`;
+`;
 
 
 

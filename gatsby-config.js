@@ -13,7 +13,7 @@ module.exports = {
       options: {
         typeName: ({object})=>{
           console.log({object});
-          return object.project ? 'Project' : object.typeName
+          return object.project ? 'ProjectJson' : object.typeName
         }
       }
 

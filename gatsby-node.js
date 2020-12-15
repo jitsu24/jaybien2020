@@ -23,107 +23,31 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 exports.createPages = async ({graphql, actions})=>{
   const {createPage} = actions;
   const result = await graphql(`
-  query{ tsJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(quality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
+  query{
+    allProjectJson{
+      edges{
+        node{
+          slug
+          title
         }
       }
     }
-  }
-  fhhsJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(quality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  keiyakuJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(quality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  perfectoJson {
-    title
-    subtitle
-    excerpt
-    date
-    blobFill
-    slug
-    featuredImage {
-      id
-      childImageSharp {
-        fluid(pngQuality: 100) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  }
+   }
   `);
 
+console.log(JSON.stringify(result, null, 4));
 
-  let nodes =result.data;
+result.data.allProjectJson.edges.forEach( ({node}) =>{
+  createPage({
+    path: node.slug,
+    component: path.resolve(`./src/templates/project-page.js`),
+    context:{
+      slug: node.slug
+    }
+  })
 
-for(let i in nodes){
-  console.log(nodes.i);
-}
+})
+
   // for(let project in result.data){
   //   const node = result.data.project;
   //   // console.log({node});
