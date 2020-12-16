@@ -6,7 +6,8 @@
     "date": "2016",
     "excerpt":"A custom Wordpress theme designed and developed for a nonprofit. Fast, fluid, and bright.",
     "featuredImage": "hwsf1.png",
-    "projectImages": [],
+    "projectImages": ["hwsf2.png", "hwsf2.png", "hwsf7.png", "hwsf3.png", "hwsf6.png"],
+    "link": "http://52.14.76.68/",
     "blobFill": "#c39",
     "involvement": ["Front End Development", "WordPress Development", "UI Design", "UX Design", "Visual Identity", "Illustration", "Animation", "Optimization", "SEO"],
     "body": "My first WordPress theme. A local nonprofit focused on women's health needed a modern and speedier take on their current website. Although this was a brand new site, there was the challenge of accomodating the current backend and all of the plugins the organization depended on for events, donations, and outreach. Along with the organization's primary light blue brand color, I introduced a lot of pink and purple to liven up the color palette. I really wanted the site to feel alive and playful, so there are lots of hover effects and animations. The main animation was created using Adobe After Effects and the Lottie plugin by Airbnb. Unfortunately, disagreements between the agency and the client kept this one from going up, but the client did end up using a lot of the colors and elements on their site which launched years later."

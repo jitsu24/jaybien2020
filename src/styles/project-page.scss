@@ -1,0 +1,57 @@
+@import './constants.style.scss';
+
+.project-page{
+    background-color: $color-white;
+    padding: $padding-xl $padding-l;
+    min-height: 100vh;
+    color: $color-primary;
+}
+
+.project-header{
+    margin-bottom: $margin-xl;
+}
+
+.project-header__title{
+    font-family: $font-flair;
+    text-align: center;
+    color: $color-dark-grey;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.project-header__body{
+
+
+}
+.project-display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+
+}
+
+.project-display__subtitle{
+    font-family: $font-flair;
+}
+.project-display__list{
+    font-family: $font-flair;
+    list-style: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+}
+.project-display__cell{
+    padding: $padding-m;
+    position: relative;
+}
+.project-display__blob{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.project-display__img{
+    width: 100%;
+    box-shadow: 5px 5px 300px $color-mid-grey;
+    border-radius: 5px;
+    max-width: 250px;
+}
