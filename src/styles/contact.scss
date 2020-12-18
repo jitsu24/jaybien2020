@@ -1,0 +1,35 @@
+@import './constants.style.scss';
+
+.contact{
+    height: 100%;
+    display: flex;
+    background-color: $color-primary;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contact__title{
+    color: $color-white;
+}
+
+.contact__subtitle{
+    color: $color-white;
+
+    a{
+        transition: all .34s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    a:link{
+        color: $color-white;
+    }
+
+    a:visited{
+        color: $color-light-grey
+    }
+    a:hover{
+        color: $color-highlight;
+    }
+}
+

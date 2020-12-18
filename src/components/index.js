@@ -1,4 +1,5 @@
 import About from './about';
+import Contact from './contact';
 import Hero from './hero';
 import Layout from './layout';
 import Menu from './menu';
@@ -11,6 +12,7 @@ import Project from './project';
 
 export {
     About,
+    Contact,
     Hero,
     Layout,
     Menu,

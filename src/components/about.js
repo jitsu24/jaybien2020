@@ -14,7 +14,7 @@ import {WorkingLate} from './images';
 const About = () => {
 
     return (
-      <div className={`section`} data-anchor="about" id="about">
+      <div className={`section dark`} data-anchor="about" id="about">
           <div className={`about`}>
               <div className="about__display">
                 <WorkingLate className={"about__svg"}/>

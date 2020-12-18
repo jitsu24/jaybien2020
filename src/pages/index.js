@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import { Link, graphql} from "gatsby"
 import ReactFullpage from '@fullpage/react-fullpage';
 
-import {About, Hero, Layout, Menu, NavBottom, Project} from '../components';
+import {About, Contact, Hero, Layout, Menu, NavBottom, Project} from '../components';
 import SEO from "../components/seo"
 
 
@@ -116,6 +116,7 @@ class IndexPage extends Component {
                  return (<Project key={project.node.slug} project={project.node}></Project>)
                 })}
           <About></About>
+          <Contact></Contact>
         </ReactFullpage.Wrapper>
       );
     }}
