@@ -18,8 +18,8 @@ const Hero = ({ children }) => {
       <div className={`section dark`} data-anchor="hero" id="hero">
           <div className={`hero`}>
            <Logo className={'hero__logo'}></Logo>
-           <h1 className="title">DEV, NY</h1>
-           <h3>Javascript, React, Node</h3>
+           <h1 className="hero__title">DEV, NY</h1>
+           <h3 className={'hero__subtitle'}> Javascript, React, Node</h3>
            </div>
       </div>
     )
