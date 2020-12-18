@@ -11,7 +11,7 @@ import {Blob, ProjectImage} from './images';
 const Project = ({ project, classNames }) => {
 
 
-const {title, subtitle, date, excerpt, featuredImage, blobFill} = project;
+const {title, subtitle, date, excerpt, featuredImage, blobFill, slug} = project;
 
   
   useEffect(()=>{
@@ -25,7 +25,6 @@ const {title, subtitle, date, excerpt, featuredImage, blobFill} = project;
         <div className={'project__display'}>
      
             <div className={`project__image-container`}>
-                <Blob className={`project__blob`} fill={blobFill}></Blob>
                 <ProjectImage data={featuredImage} className="project__image"></ProjectImage>
                 {/* <TS_Home className="project__image"></TS_Home> */}
             </div>
@@ -36,7 +35,7 @@ const {title, subtitle, date, excerpt, featuredImage, blobFill} = project;
             <p className={'project__description'}> 
             {excerpt}
               </p>
-            <a href={``} className='project__button'>View Project</a>
+            <a href={`${slug}`} className='project__button'>View Project</a>
         </div>
     </div>
 </div>

@@ -20,7 +20,6 @@ const Hero = ({ children }) => {
            <Logo className={'hero__logo'}></Logo>
            <h1 className="title">DEV, NY</h1>
            <h3>Javascript, React, Node</h3>
-           <button onClick={()=> scrollTo('#project')} >Scroll to project</button>
            </div>
       </div>
     )
