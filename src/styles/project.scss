@@ -59,8 +59,9 @@
     transform: translate(-50%, -50%);
 }
 .project__image{
-    width: 262px;
-    height: 476px;
+    width: 209.6px;
+    height: 380.8px;
+    z-index: 1;
 
     @media all and (max-width: $bp-sm) {
         width: 131px;

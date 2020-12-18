@@ -142,6 +142,7 @@ export const pageQuery = graphql`
           blobFill
           featuredImage {
             id
+            publicURL
             childImageSharp {
               fluid {
                 base64
