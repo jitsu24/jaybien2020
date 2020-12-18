@@ -2,10 +2,9 @@ import React, {Component} from "react"
 import { Link, graphql} from "gatsby"
 import ReactFullpage from '@fullpage/react-fullpage';
 
-import {Layout, Menu, NavBottom} from '../components';
+import {About, Hero, Layout, Menu, NavBottom, Project} from '../components';
 import SEO from "../components/seo"
 
-import {Hero, Project} from '../components'
 
 import {ThemeProvider, ThemeContext} from '../context/ThemeContext';
 import {TOTAL_SECTIONS} from '../constants'
@@ -116,7 +115,7 @@ class IndexPage extends Component {
                 {projects && projects.map(project => {
                  return (<Project key={project.node.slug} project={project.node}></Project>)
                 })}
-  
+          <About></About>
         </ReactFullpage.Wrapper>
       );
     }}
