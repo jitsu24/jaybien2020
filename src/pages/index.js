@@ -88,13 +88,7 @@ class IndexPage extends Component {
 
     return(
       <ThemeProvider>
-      <Layout
 
-      navTheme={this.state.navTheme}
-      toggleMenu={this.toggleMenu}
-      menuVisible={menuVisible}
->
-    <SEO title="Home" />
     <ReactFullpage
     //fullpage options
     scrollingSpeed = {1000} /* Options here */
@@ -109,6 +103,13 @@ class IndexPage extends Component {
         <ReactFullpage.Wrapper
           
         >
+                <Layout
+
+navTheme={this.state.navTheme}
+toggleMenu={this.toggleMenu}
+menuVisible={menuVisible}
+>
+<SEO title="Home" />
                 <Menu isVisible={menuVisible} ></Menu>
                 <Hero></Hero>
 
@@ -117,12 +118,13 @@ class IndexPage extends Component {
                 })}
           <About></About>
           <Contact></Contact>
+          </Layout>
         </ReactFullpage.Wrapper>
       );
     }}
   />
   {this.state.currentSection && <NavBottom  theme={this.state.navTheme} totalSections={TOTAL_SECTIONS} sectionIndex={this.state.currentSection.index}></NavBottom>}
-  </Layout>
+
   </ThemeProvider>
 
     )

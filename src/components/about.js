@@ -20,7 +20,7 @@ const About = () => {
                 <WorkingLate className={"about__svg"}/>
               </div>
               <div className="about__information">
-                <h1 className="about__title">Hello universe.</h1>
+                <h1 className="about__title">Hello.</h1>
                 <h3 className={'hero__subtitle'}> I am developer in NYC</h3>
                 <p className="about_para">I previously worked at a creative agency where I designed and built custom WordPress themes & plugins. I have also worked as a self
                     employed dev for 4+ years building web apps, websites, automation tools, scripts, plugins, and react native apps.

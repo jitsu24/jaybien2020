@@ -8,7 +8,7 @@
     justify-content: space-between;
     padding-right: $page-margins;
     padding-left: $page-margins;
-    padding-top: $padding-sm;
+    padding-top: $page-margins;
 
     &.light{
         .nav__menu-span{
@@ -18,6 +18,11 @@
             color: $color-white;
         }
         
+    }
+
+
+    @media screen and (max-width: $bp-xs){
+        padding: $padding-sm;
     }
 
 }

@@ -2,6 +2,7 @@ import About from './about';
 import Contact from './contact';
 import Hero from './hero';
 import Layout from './layout';
+import LocationIndicator from './location-indicator';
 import Menu from './menu';
 import Nav from './nav';
 import NavBottom from './nav-bottom';

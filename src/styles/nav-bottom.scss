@@ -12,13 +12,18 @@
     bottom: 0;
     padding-right: $page-margins;
     padding-left: $page-margins;
-    padding-top: $padding-sm;
+    padding-bottom: $padding-sm;
     color: $color-white;
     font-family: $font-flair;
    
 
     &.dark{
        color: $color-primary;
+    }
+
+
+    @media screen and (max-width: $bp-xs){
+        padding: $padding-sm;
     }
 
 }
